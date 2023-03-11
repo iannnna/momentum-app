@@ -57,12 +57,30 @@ body {
     font-size: 32px;
 }
 
+#clock-hover {
+    width: 100%;
+}
+
+#clock-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #clock {
     font-size: 80px;
-    position: relative;
+    margin: 0 20px 0 20px;
 }
 
+.hide {
+    visibility: hidden;
+}
+
+#clock-container:hover #clock-timezone,
+#clock-container:hover #clock-format {
+    visibility: visible;
+}
 
 /* quotes */
 #quotes {

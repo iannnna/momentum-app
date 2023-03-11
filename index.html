@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./font/fontawesome-free-6.3.0-web/css/all.min.css">
     <title>Momentum App</title>
 </head>
 
@@ -20,7 +21,11 @@
         </form>
 
         <div id="greeting-container">
-            <div id="clock" class="hidden"></div>
+            <div id="clock-container">
+                <div id="clock-timezone" class="hide"><i class="fa-solid fa-repeat"></i></div>
+                <div id="clock" class="hidden"></div>
+                <div id="clock-format" class="hide"><i class="fa-solid fa-ellipsis"></i></div>
+            </div>
             <div id="greeting" class="hidden"></div>
         </div>
     </div>

@@ -11,7 +11,7 @@ body {
     display: none !important;
 }
 
-.intro {
+#intro {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -55,53 +55,46 @@ body {
 }
 
 #greeting-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#clock {
-    font-size: 80px;
-    margin-bottom: 20px;
-}
-
-#time-format-button {
-    background: none;
-    border: none;
-    color: #888;
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: 5px;
-}
-
-#time-format-button:hover {
-    color: #555;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #greeting {
     font-size: 32px;
 }
 
-.clock-hover:hover #time-format-button {
-    display: inline-block;
+#clock {
+    font-size: 80px;
 }
 
-
 /* quotes */
+#quotes {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
 
 #quotes span {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 /* todo */
-.container {
+#todo-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    margin: 0 20px 20px 0;
     max-width: 400px;
     padding: 20px;
     background-color: #f5f5f5;
@@ -156,4 +149,11 @@ li.completed::before {
 
 .btn-delete:hover {
     color: #f00;
+}
+
+/* weather */
+#weather {
+    position: absolute;
+    right: 0;
+    margin: 20px 20px 0 0;
 }

@@ -11,7 +11,7 @@
 
 <body>
     <!-- Greeting -->
-    <div class="intro">
+    <div id="intro">
         <form id="login-form" class="hidden">
             <label for="username-input">
                 <h1>Hello, what's your name?</h1>
@@ -19,24 +19,21 @@
             <input type="text" id="username-input">
         </form>
 
-        <div id="greeting-container" class="hidden">
-            <div id="clock-container">
-                <span id="clock">00:00:00</span>
-                <button id="time-format-button" class="hidden">12hr</button>
-            </div>
-            <div id="greeting"></div>
+        <div id="greeting-container">
+            <div id="clock" class="hidden"></div>
+            <div id="greeting" class="hidden"></div>
         </div>
     </div>
 
     <!-- quotes -->
-    <div id="quotes">
+    <div id="quotes" class="hidden">
         <span>"The quote text goes here"</span>
         <span>- Author name</span>
     </div>
 
     <!-- to do -->
 
-    <div class="container">
+    <div id="todo-container" class="hidden">
         <form id="todo-form">
             <input type="text" placeholder="Add a to-do item">
             <button type="submit">Add</button>
@@ -47,7 +44,7 @@
     </div>
 
     <!-- weather -->
-    <div id="weather">
+    <div id="weather" class="hidden">
         <span>Current weather: </span><span></span>
         <br>
         <span>City: </span><span></span>

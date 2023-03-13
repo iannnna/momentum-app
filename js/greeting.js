@@ -48,3 +48,28 @@ if (savedUsername === null) {
 } else {
   paintGreeting(savedUsername);
 }
+
+const clockOption = document.getElementById("clockOption");
+const toggleOff = document.querySelector(".toggleOff");
+const timeFormatText = document.querySelector(".clock-option p");
+
+function toggleMenu() {
+  clockOption.classList.toggle("open-menu");
+}
+
+let is24HourFormat = false;
+
+toggleOff.addEventListener("click", () => {
+  if (is24HourFormat) {
+    timeFormatText.textContent = "12-hour time";
+    toggleOff.classList.remove("toggleOn");
+    toggleOff.querySelector(".toggleBoxOff").classList.remove("toggleBoxOn");
+
+    is24HourFormat = false;
+  } else {
+    timeFormatText.textContent = "24-hour time";
+    toggleOff.classList.add("toggleOn");
+    toggleOff.querySelector(".toggleBoxOff").classList.add("toggleBoxOn");
+    is24HourFormat = true;
+  }
+});

@@ -65,7 +65,7 @@ body {
 }
 
 #clock {
-    font-size: 80px;
+    font-size: 168px;
     margin: 0 20px 0 20px;
 }
 
@@ -87,12 +87,86 @@ body {
 }
 
 #greeting {
-    font-size: 32px;
+    font-size: 54px;
     margin: 0 20px 0 20px;
 }
 
 #name-greeting:hover #greeting-option {
     visibility: visible;
+}
+
+/* clockOption */
+.clock-option-wrap {
+    position: absolute;
+    top: 45%;
+    right: 25.5%;
+    width: 150px;
+    border-radius: 10px;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.clock-option-wrap.open-menu {
+    max-height: 400px;
+}
+
+.clock-option {
+    background: #000;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.clock-option hr {
+    width: 100%;
+    background: #ccc;
+    margin: 10px 0 10px;
+}
+
+.clock-option p {
+    margin: 0 auto;
+    padding: 3px;
+}
+
+.toggleOff {
+    background: #dbdad8;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+}
+
+.toggleBoxOff {
+    width: 20px;
+    height: 18px;
+    border-radius: 50%;
+    background: #6666;
+    margin: 2px;
+}
+
+.toggleOn {
+    background: #7ed957;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.toggleBoxOn {
+    width: 20px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 2px;
 }
 
 /* quotes */

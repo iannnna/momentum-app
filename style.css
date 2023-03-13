@@ -53,10 +53,6 @@ body {
     align-items: center;
 }
 
-#greeting {
-    font-size: 32px;
-}
-
 #clock-hover {
     width: 100%;
 }
@@ -82,6 +78,23 @@ body {
     visibility: visible;
 }
 
+
+#name-greeting {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#greeting {
+    font-size: 32px;
+    margin: 0 20px 0 20px;
+}
+
+#name-greeting:hover #greeting-option {
+    visibility: visible;
+}
+
 /* quotes */
 #quotes {
     position: absolute;
@@ -99,6 +112,7 @@ body {
     align-items: center;
     text-align: center;
 }
+
 
 /* todo */
 #todo-container {

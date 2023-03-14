@@ -1,3 +1,5 @@
+// Intro + Greeting
+
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
@@ -49,27 +51,39 @@ if (savedUsername === null) {
   paintGreeting(savedUsername);
 }
 
+// Clock option
+
+const clock = document.querySelector("#clock");
 const clockOption = document.getElementById("clockOption");
 const toggleOff = document.querySelector(".toggleOff");
 const timeFormatText = document.querySelector(".clock-option p");
+
+let is24HourFormat = true;
 
 function toggleMenu() {
   clockOption.classList.toggle("open-menu");
 }
 
-let is24HourFormat = false;
-
 toggleOff.addEventListener("click", () => {
-  if (is24HourFormat) {
-    timeFormatText.textContent = "12-hour time";
-    toggleOff.classList.remove("toggleOn");
-    toggleOff.querySelector(".toggleBoxOff").classList.remove("toggleBoxOn");
+  is24HourFormat = !is24HourFormat;
+});
 
-    is24HourFormat = false;
-  } else {
-    timeFormatText.textContent = "24-hour time";
+function getClock() {
+  const date = new Date();
+  let hours = date.getHours();
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
+
+  if (!is24HourFormat) {
+    hours = hours % 12 || 12;
     toggleOff.classList.add("toggleOn");
     toggleOff.querySelector(".toggleBoxOff").classList.add("toggleBoxOn");
-    is24HourFormat = true;
+  } else {
+    toggleOff.classList.remove("toggleOn");
+    toggleOff.querySelector(".toggleBoxOff").classList.remove("toggleBoxOn");
   }
-});
+  clock.innerText = `${hours}:${minutes}:${seconds} `;
+}
+
+getClock();
+setInterval(getClock, 1000);

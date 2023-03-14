@@ -63,7 +63,6 @@ let is24HourFormat = true;
 
 function toggleMenu() {
   clockOption.classList.toggle("open-menu");
-  clockFormatButton.classList.add("active");
 }
 
 document.addEventListener("click", (event) => {

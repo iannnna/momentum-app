@@ -54,6 +54,7 @@ if (savedUsername === null) {
 // Clock option
 
 const clock = document.querySelector("#clock");
+const clockFormatButton = document.getElementById("clock-format");
 const clockOption = document.getElementById("clockOption");
 const toggleOff = document.querySelector(".toggleOff");
 const timeFormatText = document.querySelector(".clock-option p");
@@ -62,7 +63,18 @@ let is24HourFormat = true;
 
 function toggleMenu() {
   clockOption.classList.toggle("open-menu");
+  clockFormatButton.classList.add("active");
 }
+
+document.addEventListener("click", (event) => {
+  if (
+    !clockOption.contains(event.target) &&
+    !clockFormatButton.contains(event.target)
+  ) {
+    clockOption.classList.remove("open-menu");
+    clockFormatButton.classList.remove("active");
+  }
+});
 
 toggleOff.addEventListener("click", () => {
   is24HourFormat = !is24HourFormat;
@@ -76,6 +88,7 @@ function getClock() {
 
   if (!is24HourFormat) {
     hours = hours % 12 || 12;
+    hours = String(hours).padStart(2, "0");
     toggleOff.classList.add("toggleOn");
     toggleOff.querySelector(".toggleBoxOff").classList.add("toggleBoxOn");
   } else {

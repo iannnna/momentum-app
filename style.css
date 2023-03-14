@@ -53,10 +53,6 @@ body {
     align-items: center;
 }
 
-#clock-hover {
-    width: 100%;
-}
-
 #clock-container {
     width: 100%;
     display: flex;
@@ -71,6 +67,10 @@ body {
 
 .hide {
     visibility: hidden;
+}
+
+#clock-format.active {
+    visibility: visible;
 }
 
 #clock-container:hover #clock-timezone,

@@ -52,17 +52,19 @@ if (savedUsername === null) {
 }
 
 // Clock option
-
 const clock = document.querySelector("#clock");
 const clockFormatButton = document.getElementById("clock-format");
 const clockOption = document.getElementById("clockOption");
 const toggleOff = document.querySelector(".toggleOff");
 const timeFormatText = document.querySelector(".clock-option p");
+const updateNameButton = document.getElementById("greeting-option");
+const updateName = document.getElementById("updateName");
 
 let is24HourFormat = true;
 
 function toggleMenu() {
   clockOption.classList.toggle("open-menu");
+  updateName.classList.toggle("open-menu");
 }
 
 document.addEventListener("click", (event) => {
@@ -99,3 +101,15 @@ function getClock() {
 
 getClock();
 setInterval(getClock, 1000);
+
+// name option
+
+document.addEventListener("click", (event) => {
+  if (
+    !updateName.contains(event.target) &&
+    !updateNameButton.contains(event.target)
+  ) {
+    updateName.classList.remove("open-menu");
+    updateNameButton.classList.remove("active");
+  }
+});

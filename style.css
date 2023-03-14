@@ -69,10 +69,6 @@ body {
     visibility: hidden;
 }
 
-#clock-format.active {
-    visibility: visible;
-}
-
 #clock-container:hover #clock-timezone,
 #clock-container:hover #clock-format {
     visibility: visible;
@@ -96,6 +92,14 @@ body {
 }
 
 /* clockOption */
+#clock-format {
+    cursor: pointer;
+}
+
+#clock-format.active {
+    visibility: visible;
+}
+
 .clock-option-wrap {
     position: absolute;
     top: 45%;
@@ -117,13 +121,6 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
-}
-
-.clock-option hr {
-    width: 100%;
-    background: #ccc;
-    margin: 10px 0 10px;
 }
 
 .clock-option p {
@@ -139,6 +136,7 @@ body {
     margin: 0 auto;
     display: flex;
     align-items: center;
+    cursor: pointer;
 
 }
 
@@ -167,6 +165,48 @@ body {
     border-radius: 50%;
     background: #fff;
     margin: 2px;
+}
+
+/* greeting option */
+#greeting-option {
+    cursor: pointer;
+}
+
+#greeting-option.active {
+    visibility: visible;
+}
+
+.update-name-wrap {
+    position: absolute;
+    top: 94.7%;
+    right: 31.1%;
+    width: 110px;
+    max-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.update-name-wrap.open-menu {
+    max-height: 400px;
+}
+
+.update-name {
+    background: #000;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.update-name:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.update-name p {
+    margin: 0 auto;
+    padding: 3px;
 }
 
 /* quotes */

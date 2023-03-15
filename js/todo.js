@@ -1,3 +1,16 @@
+const todo = document.querySelector("#todo");
+const todoMenu = document.querySelector("#todo-container");
+
+function showTodoMenu() {
+  todoMenu.classList.toggle("open-menu");
+}
+
+document.addEventListener("click", (event) => {
+  if (!todo.contains(event.target) && !todoMenu.contains(event.target)) {
+    todoMenu.classList.remove("open-menu");
+  }
+});
+
 const todoForm = document.querySelector("#todo-form");
 const todoList = document.querySelector("#todo-list");
 const todoInput = todoForm.querySelector("input");

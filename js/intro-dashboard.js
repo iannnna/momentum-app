@@ -43,6 +43,11 @@ function paintGreeting(username) {
   quotesHide.classList.remove(HIDDEN_CLASSNAME);
   todoHide.classList.remove(HIDDEN_CLASSNAME);
   weatherHide.classList.remove(HIDDEN_CLASSNAME);
+
+  const userGreeting = document.querySelector("#user-greeting");
+  userGreeting.addEventListener("blur", () => {
+    localStorage.setItem(USERNAME_KEY, userGreeting.innerText);
+  });
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);

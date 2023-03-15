@@ -48,6 +48,12 @@ function paintGreeting(username) {
   userGreeting.addEventListener("blur", () => {
     localStorage.setItem(USERNAME_KEY, userGreeting.innerText);
   });
+  userGreeting.addEventListener("keydown", (event) => {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      userGreeting.blur();
+    }
+  });
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);

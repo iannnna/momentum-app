@@ -7,6 +7,7 @@ const clockHide = document.querySelector("#clock");
 const quotesHide = document.querySelector("#quotes");
 const todoHide = document.querySelector("#todo-container");
 const weatherHide = document.querySelector("#weather");
+const timeGreet = document.querySelector("#time-greeting");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
@@ -25,7 +26,7 @@ function getGreeting() {
 
   if (hour >= 6 && hour < 12) {
     return "Good morning";
-  } else if (hour > +12 && hour < 18) {
+  } else if (hour >= 12 && hour < 18) {
     return "Good afternoon";
   } else {
     return "Good Evening";
@@ -33,8 +34,10 @@ function getGreeting() {
 }
 
 function paintGreeting(username) {
-  const greetingText = `${getGreeting()}, ${username}`;
-  greeting.innerText = greetingText;
+  const timeGreeting = getGreeting();
+  const greetingText = `${timeGreeting}, <span contenteditable id="user-greeting">${username}</span>`;
+  greeting.innerHTML = greetingText;
+  timeGreet.innerText = timeGreeting;
   greeting.classList.remove(HIDDEN_CLASSNAME);
   clockHide.classList.remove(HIDDEN_CLASSNAME);
   quotesHide.classList.remove(HIDDEN_CLASSNAME);
@@ -50,6 +53,17 @@ if (savedUsername === null) {
 } else {
   paintGreeting(savedUsername);
 }
+
+//name option
+document.addEventListener("click", (event) => {
+  if (
+    !updateName.contains(event.target) &&
+    !updateNameButton.contains(event.target)
+  ) {
+    updateName.classList.remove("open-menu");
+    updateNameButton.classList.remove("active");
+  }
+});
 
 // Clock option
 const clock = document.querySelector("#clock");
@@ -101,15 +115,3 @@ function getClock() {
 
 getClock();
 setInterval(getClock, 1000);
-
-// name option
-
-document.addEventListener("click", (event) => {
-  if (
-    !updateName.contains(event.target) &&
-    !updateNameButton.contains(event.target)
-  ) {
-    updateName.classList.remove("open-menu");
-    updateNameButton.classList.remove("active");
-  }
-});

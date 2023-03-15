@@ -6,11 +6,11 @@ body {
     max-height: 100vh;
 }
 
-/* intro + greeting + clock */
 .hidden {
     display: none !important;
 }
 
+/* intro + clock + greeting */
 #intro {
     width: 100%;
     position: absolute;
@@ -60,13 +60,13 @@ body {
     align-items: center;
 }
 
+.hide {
+    visibility: hidden;
+}
+
 #clock {
     font-size: 168px;
     margin: 0 20px 0 20px;
-}
-
-.hide {
-    visibility: hidden;
 }
 
 #clock-container:hover #clock-timezone,
@@ -74,30 +74,6 @@ body {
     visibility: visible;
 }
 
-#name-greeting {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#greeting {
-    font-size: 54px;
-    margin: 0 20px 0 20px;
-}
-
-#greeting>span[contenteditable]:focus {
-    outline: none;
-    border-bottom: 1px solid black;
-
-}
-
-#name-greeting:hover #greeting-option {
-    visibility: visible;
-}
-
-
-/* clockOption */
 #clock-format {
     cursor: pointer;
 }
@@ -173,7 +149,28 @@ body {
     margin: 2px;
 }
 
-/* greeting option */
+#name-greeting {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#greeting {
+    font-size: 54px;
+    margin: 0 20px 0 20px;
+}
+
+#greeting>span[contenteditable]:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+
+}
+
+#name-greeting:hover #greeting-option {
+    visibility: visible;
+}
+
 #greeting-option {
     cursor: pointer;
 }
@@ -185,7 +182,7 @@ body {
 .update-name-wrap {
     position: absolute;
     top: 94.7%;
-    right: 31.1%;
+    right: 30.5%;
     width: 110px;
     max-height: 0;
     overflow: hidden;

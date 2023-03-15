@@ -33,6 +33,19 @@ function getGreeting() {
   }
 }
 
+function addEditNameEventListener() {
+  const editNameButton = document.querySelector(".update-name");
+  const extraSpace = document.querySelector("#extra-space");
+  const updateName = document.querySelector("#updateName");
+
+  editNameButton.addEventListener("click", () => {
+    extraSpace.classList.toggle(HIDDEN_CLASSNAME);
+    updateName.classList.toggle("open-menu");
+    const userGreeting = document.querySelector("#user-greeting");
+    userGreeting.focus();
+  });
+}
+
 function paintGreeting(username) {
   const timeGreeting = getGreeting();
   const greetingText = `${timeGreeting}, <span contenteditable id="user-greeting">${username}</span>`;
@@ -54,6 +67,7 @@ function paintGreeting(username) {
       userGreeting.blur();
     }
   });
+  addEditNameEventListener();
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);

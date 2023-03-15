@@ -59,7 +59,13 @@ function paintGreeting(username) {
 
   const userGreeting = document.querySelector("#user-greeting");
   userGreeting.addEventListener("blur", () => {
-    localStorage.setItem(USERNAME_KEY, userGreeting.innerText);
+    const newName = userGreeting.innerText.trim();
+    if (newName === "") {
+      const savedUsername = localStorage.getItem(USERNAME_KEY);
+      userGreeting.innerText = savedUsername;
+    } else {
+      localStorage.setItem(USERNAME_KEY, newName);
+    }
   });
   userGreeting.addEventListener("keydown", (event) => {
     if (event.keyCode === 13) {

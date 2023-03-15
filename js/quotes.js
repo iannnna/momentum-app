@@ -13,12 +13,51 @@ const quotes = [
       "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
     author: "Oprah Winfrey",
   },
+  {
+    quote: "Get busy living or get busy dying.",
+    author: "Stephen King",
+  },
+  {
+    quote: "You only live once, but if you do it right, once is enough.",
+    author: "Mae West",
+  },
+  {
+    quote:
+      "Many of life’s failures are people who did not realize how close they were to success when they gave up.",
+    author: "Albert Einstein",
+  },
+  {
+    quote: "Never let the fear of striking out keep you from playing the game.",
+    author: "Babe Ruth",
+  },
+  {
+    quote:
+      "Money and success don’t change people; they merely amplify what is already there.",
+    author: "Will Smith",
+  },
+  {
+    quote:
+      "Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking.",
+    author: "Steve Jobs",
+  },
+  {
+    quote:
+      "If life were predictable it would cease to be life, and be without flavor.",
+    author: "Eleanor Roosevelt",
+  },
 ];
 
 const quote1 = document.querySelector("#quotes span:first-child");
 const author1 = document.querySelector("#quotes span:last-child");
 
-const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
+let currentQuoteIndex = 0;
 
-quote1.innerText = todayQuote.quote;
-author1.innerText = todayQuote.author;
+function updateQuote() {
+  const todayQuote = quotes[currentQuoteIndex];
+  quote1.innerText = todayQuote.quote;
+  author1.innerText = todayQuote.author;
+  currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+}
+
+updateQuote();
+setInterval(updateQuote, 60000);

@@ -63,12 +63,16 @@
 
     <!-- quotes -->
     <div id="quotes" class="hidden">
-        <span>"The quote text goes here"</span>
-        <span>- Author name</span>
+        <span class="quote-text">"The quote text goes here"</span>
+        <span class="author">- Author name</span>
     </div>
 
     <!-- to do -->
-    <div id="todo-container" class="hidden">
+    <div id="todo">
+        <div id="todo-text" onclick="showTodoMenu">Todo</div>
+    </div>
+
+    <div id="todo-container" class="hidden hide">
         <form id="todo-form">
             <input type="text" placeholder="Add a to-do item">
             <button type="submit">Add</button>

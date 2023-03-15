@@ -47,15 +47,15 @@ const quotes = [
   },
 ];
 
-const quote1 = document.querySelector("#quotes span:first-child");
-const author1 = document.querySelector("#quotes span:last-child");
+const quote1 = document.querySelector("#quotes .quote-text");
+const author1 = document.querySelector("#quotes .author");
 
 let currentQuoteIndex = 0;
 
 function updateQuote() {
   const todayQuote = quotes[currentQuoteIndex];
-  quote1.innerText = todayQuote.quote;
-  author1.innerText = todayQuote.author;
+  quote1.innerText = `“${todayQuote.quote}”`;
+  author1.innerText = `- ${todayQuote.author}`;
   currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
 }
 

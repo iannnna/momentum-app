@@ -1,5 +1,3 @@
-// Intro + Greeting
-
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
@@ -85,7 +83,6 @@ if (savedUsername === null) {
   paintGreeting(savedUsername);
 }
 
-//name option
 document.addEventListener("click", (event) => {
   if (
     !updateName.contains(event.target) &&
@@ -96,7 +93,6 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Clock option
 const clock = document.querySelector("#clock");
 const clockFormatButton = document.getElementById("clock-format");
 const clockOption = document.getElementById("clockOption");

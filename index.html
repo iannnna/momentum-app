@@ -68,18 +68,24 @@
     </div>
 
     <!-- to do -->
-    <div id="todo">
-        <div id="todo-text" onclick="showTodoMenu()">Todo</div>
+    <div id="todo" onclick="showTodoMenu()">
+        <div id="todo-text">Todo</div>
     </div>
 
     <div id="todo-container" class="hidden">
-        <form id="todo-form">
-            <input type="text" placeholder="Add a to-do item">
-            <button type="submit">Add</button>
-        </form>
+        <div id="todo-title">
+            <h2>Todo</h2>
+            <div id="todo-close-button">&times;</div>
 
-        <ul id="todo-list">
-        </ul>
+        </div>
+        <div id="todo-items">
+            <ul id="todo-list">
+            </ul>
+        </div>
+
+        <form id="todo-form">
+            <input type="text" placeholder="New Todo">
+        </form>
     </div>
 
     <!-- weather -->

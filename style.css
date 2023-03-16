@@ -264,21 +264,63 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0 20px 20px 0;
-    padding: 20px;
     background-color: #f5f5f5;
     border-radius: 5px;
     visibility: hidden;
-    overflow: hidden;
+    overflow: auto;
+    overflow-x: hidden;
+    max-width: 400px;
+    max-height: 50vh;
 }
 
 #todo-container.open-menu {
     visibility: visible;
 }
 
+#todo-title {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 8px 0;
+    border-radius: 5px 5px 0 0;
+}
+
+#todo-title h2 {
+    position: relative;
+    padding: 0 20px;
+}
+
+#todo-close-button {
+    margin: 5px;
+    font-size: 36px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+#todo-items {
+    padding: 0 20px 10px 20px;
+}
+
+#todo-list {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 400px;
+}
+
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    word-break: break-all;
 }
 
 li {
@@ -286,6 +328,7 @@ li {
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #eee;
+    word-wrap: break-word;
 }
 
 li.completed span {
@@ -305,6 +348,7 @@ li.completed::before {
     border: 2px solid black;
     margin-right: 10px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .completed {
@@ -321,8 +365,29 @@ li.completed::before {
     padding: 0;
 }
 
-.btn-delete:hover {
-    color: #f00;
+#todo-form {
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 8px 0;
+    border-radius: 5px 5px 0 0;
+}
+
+#todo-form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: none;
+    padding: 0 30px;
 }
 
 /* weather */

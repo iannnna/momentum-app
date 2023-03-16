@@ -1,15 +1,16 @@
 const todo = document.querySelector("#todo");
 const todoMenu = document.querySelector("#todo-container");
+const todoCloseButton = document.querySelector("#todo-close-button");
 
 function showTodoMenu() {
   todoMenu.classList.toggle("open-menu");
 }
 
-document.addEventListener("click", (event) => {
-  if (!todo.contains(event.target) && !todoMenu.contains(event.target)) {
-    todoMenu.classList.remove("open-menu");
-  }
-});
+function closeTodoMenu() {
+  todoMenu.classList.remove("open-menu");
+}
+
+todoCloseButton.addEventListener("click", closeTodoMenu);
 
 const todoForm = document.querySelector("#todo-form");
 const todoList = document.querySelector("#todo-list");
@@ -57,7 +58,10 @@ function paintTodo(newTodo) {
 
 function handleTodoSubmit(event) {
   event.preventDefault();
-  const newTodo = todoInput.value;
+  const newTodo = todoInput.value.trim();
+  if (newTodo === "") {
+    return;
+  }
   todoInput.value = "";
   const newTodoObj = {
     text: newTodo,

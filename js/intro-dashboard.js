@@ -3,7 +3,7 @@ const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 const clockHide = document.querySelector("#clock");
 const quotesHide = document.querySelector("#quotes");
-const todoHide = document.querySelector("#todo-container");
+const todoHide = document.querySelector("#todo");
 const weatherHide = document.querySelector("#weather");
 const timeGreet = document.querySelector("#time-greeting");
 

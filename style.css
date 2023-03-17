@@ -317,13 +317,14 @@ body {
     word-break: break-all;
 }
 
-.todo-spans {
+li {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
     border-bottom: 1px solid #eee;
     word-wrap: break-word;
+    gap: 20px;
 }
 
 #todoOptions {
@@ -331,14 +332,32 @@ body {
     gap: 5px;
 }
 
+li input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+}
+
+#newTodoItem {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
 #todoOptions button {
     border: none;
+    background: transparent;
     padding: 2px;
     font-size: 16px;
     cursor: pointer;
 }
 
-#unchecked,
+.unchecked,
 #checked {
     font-size: 16px;
     cursor: pointer;
@@ -346,11 +365,6 @@ body {
 
 #checked {
     display: none;
-}
-
-#newTodo {
-    padding: 0 20px;
-    flex: 1;
 }
 
 #todo-form {

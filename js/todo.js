@@ -12,73 +12,58 @@ function closeTodoMenu() {
 
 todoCloseButton.addEventListener("click", closeTodoMenu);
 
-const todoForm = document.querySelector("#todo-form");
-const todoList = document.querySelector("#todo-list");
-const todoInput = todoForm.querySelector("input");
+const form = document.getElementById("todo-form");
+const todoList = document.getElementById("todo-list");
 
-let todos = [];
-
-const TODOS_KEY = "todos";
-
-function saveTodos() {
-  localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
+const savedTodos = localStorage.getItem("todos");
+if (savedTodos) {
+  todoList.innerHTML = savedTodos;
 }
 
-function deleteTodo(event) {
-  const li = event.target.parentElement;
-  li.remove();
-  todos = todos.filter((toDo) => toDo.id !== parseInt(li.id));
-  saveTodos();
-}
-
-function paintTodo(newTodo) {
-  const li = document.createElement("li");
-  li.id = newTodo.id;
-
-  const circle = document.createElement("span");
-  circle.classList.add("circle");
-  circle.addEventListener("click", function () {
-    span.classList.toggle("completed");
-  });
-
-  const span = document.createElement("span");
-  span.innerText = newTodo.text;
-
-  const button = document.createElement("button");
-  button.innerText = "🗑️";
-  button.style = "border: none";
-  button.addEventListener("click", deleteTodo);
-
-  li.appendChild(circle);
-  li.appendChild(span);
-  li.appendChild(button);
-
-  todoList.appendChild(li);
-}
-
-function handleTodoSubmit(event) {
+form.addEventListener("submit", function (event) {
   event.preventDefault();
-  const newTodo = todoInput.value.trim();
-  if (newTodo === "") {
-    return;
+
+  const input = this.querySelector("input");
+  const text = input.value.trim();
+
+  if (text) {
+    const li = document.createElement("li");
+    li.classList.add("todo-spans");
+
+    const uncheckedSpan = document.createElement("span");
+    uncheckedSpan.id = "unchecked";
+    uncheckedSpan.innerHTML = '<i class="fa-regular fa-square"></i>';
+    li.appendChild(uncheckedSpan);
+
+    const checkedSpan = document.createElement("span");
+    checkedSpan.id = "checked";
+    checkedSpan.innerHTML = '<i class="fa-regular fa-square-check"></i>';
+    li.appendChild(checkedSpan);
+
+    const newTodoSpan = document.createElement("span");
+    newTodoSpan.id = "newTodo";
+    newTodoSpan.textContent = text;
+    li.appendChild(newTodoSpan);
+
+    const todoOptionsSpan = document.createElement("span");
+    todoOptionsSpan.id = "todoOptions";
+
+    const editButton = document.createElement("button");
+    editButton.id = "editButton";
+    editButton.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+    todoOptionsSpan.appendChild(editButton);
+
+    const deleteButton = document.createElement("button");
+    deleteButton.id = "deleteButton";
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    todoOptionsSpan.appendChild(deleteButton);
+
+    li.appendChild(todoOptionsSpan);
+
+    todoList.appendChild(li);
+
+    localStorage.setItem("todos", todoList.innerHTML);
+
+    input.value = "";
   }
-  todoInput.value = "";
-  const newTodoObj = {
-    text: newTodo,
-    id: Date.now(),
-  };
-
-  todos.push(newTodoObj);
-  paintTodo(newTodoObj);
-  saveTodos();
-}
-
-todoForm.addEventListener("submit", handleTodoSubmit);
-
-const savedTodos = localStorage.getItem(TODOS_KEY);
-
-if (savedTodos !== null) {
-  const parsedTodo = JSON.parse(savedTodos);
-  todos = parsedTodo;
-  parsedTodo.forEach(paintTodo);
-}
+});

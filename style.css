@@ -305,7 +305,7 @@ body {
 }
 
 #todo-items {
-    padding: 0 20px 10px 20px;
+    width: 100%;
 }
 
 #todo-list {
@@ -314,55 +314,43 @@ body {
     padding: 0;
     margin: 0;
     max-width: 400px;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     word-break: break-all;
 }
 
-li {
+.todo-spans {
     display: flex;
     align-items: center;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 10px 20px;
     border-bottom: 1px solid #eee;
     word-wrap: break-word;
 }
 
-li.completed span {
-    text-decoration: line-through;
+#todoOptions {
+    display: flex;
+    gap: 5px;
 }
 
-li.completed::before {
-    border-color: #8bc34a;
-}
-
-.circle {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: white;
-    border: 2px solid black;
-    margin-right: 10px;
-    cursor: pointer;
-    flex-shrink: 0;
-}
-
-.completed {
-    text-decoration: line-through;
-}
-
-.btn-delete {
-    background-color: transparent;
+#todoOptions button {
     border: none;
-    color: #888;
+    padding: 2px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 1.2em;
-    margin-left: 10px;
-    padding: 0;
+}
+
+#unchecked,
+#checked {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#checked {
+    display: none;
+}
+
+#newTodo {
+    padding: 0 20px;
+    flex: 1;
 }
 
 #todo-form {

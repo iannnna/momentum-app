@@ -122,15 +122,28 @@ function paintTodo(newTodo) {
 
 function handleTodoSubmit(event) {
   event.preventDefault();
-  const newTodo = todoInput.value;
+  const newTodo = todoInput.value.trim();
+  if (newTodo === "") {
+    return;
+  }
   todoInput.value = "";
   const newTodoObj = {
     text: newTodo,
     id: Date.now(),
+    completed: false,
   };
   todos.push(newTodoObj);
   paintTodo(newTodoObj);
   saveTodos();
+
+  const newTodoItem = document.getElementById(newTodoObj.id);
+  newTodoItem.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest",
+    inline: "end",
+  });
+
+  todoList.scrollTop = todoList.scrollHeight;
 }
 
 todoForm.addEventListener("submit", handleTodoSubmit);

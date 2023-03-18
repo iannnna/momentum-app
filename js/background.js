@@ -20,8 +20,7 @@ async function setCollectionBackgroundImage() {
   } else if (hour >= 12 && hour < 18) {
     collectionId = "Tk52OHSX4uw";
   } else if (hour >= 18 && hour < 24) {
-    // collectionId = "bQ_TsEMgw2s";
-    collectionId = "Tk52OHSX4uw";
+    collectionId = "bQ_TsEMgw2s";
   } else {
     collectionId = "UnkoGILoIHw";
   }
@@ -37,4 +36,4 @@ async function setCollectionBackgroundImage() {
 }
 
 setCollectionBackgroundImage();
-// setInterval(setCollectionBackgroundImage, 60000);
+setInterval(setCollectionBackgroundImage, 60000);

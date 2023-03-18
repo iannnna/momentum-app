@@ -5,6 +5,7 @@ const clockHide = document.querySelector("#clock");
 const quotesHide = document.querySelector("#quotes");
 const todoHide = document.querySelector("#todo");
 const weatherHide = document.querySelector("#weather");
+const searchHide = document.querySelector("#search-bar");
 const timeGreet = document.querySelector("#time-greeting");
 
 const HIDDEN_CLASSNAME = "hidden";
@@ -54,6 +55,7 @@ function paintGreeting(username) {
   quotesHide.classList.remove(HIDDEN_CLASSNAME);
   todoHide.classList.remove(HIDDEN_CLASSNAME);
   weatherHide.classList.remove(HIDDEN_CLASSNAME);
+  searchHide.classList.remove(HIDDEN_CLASSNAME);
 
   const userGreeting = document.querySelector("#user-greeting");
   userGreeting.addEventListener("blur", () => {

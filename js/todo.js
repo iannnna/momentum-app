@@ -66,6 +66,7 @@ function paintTodo(newTodo) {
     const input = document.createElement("input");
     input.type = "text";
     input.value = span.innerText;
+    input.style.color = "white";
     input.addEventListener("keydown", function (event) {
       if (event.key === "Enter") {
         span.innerText = input.value;

@@ -20,7 +20,8 @@ async function setCollectionBackgroundImage() {
   } else if (hour >= 12 && hour < 18) {
     collectionId = "Tk52OHSX4uw";
   } else if (hour >= 18 && hour < 24) {
-    collectionId = "bQ_TsEMgw2s";
+    // collectionId = "bQ_TsEMgw2s";
+    collectionId = "Tk52OHSX4uw";
   } else {
     collectionId = "UnkoGILoIHw";
   }

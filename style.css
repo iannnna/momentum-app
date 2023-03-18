@@ -215,10 +215,6 @@ body {
     border-radius: 10px;
 }
 
-.update-name:hover {
-    background: rgba(0, 0, 0, 0.6);
-}
-
 .update-name p {
     margin: 0 auto;
     padding: 3px;

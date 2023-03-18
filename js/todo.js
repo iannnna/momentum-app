@@ -47,6 +47,11 @@ function paintTodo(newTodo) {
       ? '<i class="fa-regular fa-square-check"></i>'
       : '<i class="fa-regular fa-square"></i>';
     span.style.textDecoration = newTodo.completed ? "line-through" : "none";
+    if (newTodo.completed) {
+      span.classList.add("gray");
+    } else {
+      span.classList.remove("gray");
+    }
     saveTodos();
   });
 
@@ -54,6 +59,9 @@ function paintTodo(newTodo) {
   span.id = "newTodoItem";
   span.innerText = newTodo.text;
   span.style.textDecoration = newTodo.completed ? "line-through" : "none";
+  if (newTodo.completed) {
+    span.classList.add("gray");
+  }
   span.addEventListener("dblclick", function () {
     const input = document.createElement("input");
     input.type = "text";
@@ -88,6 +96,7 @@ function paintTodo(newTodo) {
     input.value = span.innerText;
     input.style.outline = "none";
     input.style.border = "none";
+    input.style.color = "white";
     input.addEventListener("keydown", function (event) {
       if (event.key === "Enter") {
         span.innerText = input.value;

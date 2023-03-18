@@ -81,7 +81,6 @@ body {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
-#clock-container:hover #clock-timezone,
 #clock-container:hover #clock-format {
     visibility: visible;
 }
@@ -442,4 +441,32 @@ li input {
 #weather img {
     position: relative;
     top: 15px;
+}
+
+/* searchbar */
+#search-bar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 20px 20px 0 0;
+}
+
+#search-bar input[type="text"] {
+    padding: 5px;
+    font-size: 18px;
+    width: 200px;
+    border: none;
+    border-radius: 3px;
+    background: transparent;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+#search-bar input[type="text"]::placeholder {
+    color: #cccccc;
+}
+
+#search-bar input[type="text"]:focus {
+    outline: none;
+    color: white;
 }

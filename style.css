@@ -69,6 +69,7 @@ body {
 #clock {
     font-size: 168px;
     margin: 0 20px 0 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 #clock-container:hover #clock-timezone,
@@ -161,6 +162,7 @@ body {
 #greeting {
     font-size: 54px;
     margin: 0 20px 0 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 #greeting>span[contenteditable]:focus {
@@ -233,12 +235,13 @@ body {
 
 #quotes .quote-text {
     font-size: 20px;
-    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 #quotes .author {
-    font-size: 18px;
+    font-size: 16px;
     display: none;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 #quotes:hover .author {
@@ -251,11 +254,12 @@ body {
     bottom: 0;
     right: 0;
     margin: 0 20px 20px 0;
-    padding: 20px;
-    background-color: #000;
+    padding: 0 20px;
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
+    font-size: 25px;
 }
 
 #todo-container {
@@ -266,13 +270,14 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0 20px 20px 0;
-    background-color: #f5f5f5;
+    background-color: #141414;
     border-radius: 5px;
     visibility: hidden;
     overflow: auto;
     overflow-x: hidden;
     max-width: 400px;
     max-height: 50vh;
+    color: white;
 }
 
 #todo-container.open-menu {
@@ -287,7 +292,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: #f5f5f5;
+    background-color: #141414;
     padding: 8px 0;
     border-radius: 5px 5px 0 0;
 }
@@ -300,7 +305,7 @@ body {
 #todo-close-button {
     margin: 5px;
     font-size: 36px;
-    color: #000;
+    color: #fff;
     font-weight: bold;
     cursor: pointer;
     padding: 0 10px;
@@ -324,7 +329,6 @@ li {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    border-bottom: 1px solid #eee;
     word-wrap: break-word;
     gap: 20px;
 }
@@ -357,6 +361,7 @@ li input {
     padding: 2px;
     font-size: 16px;
     cursor: pointer;
+    color: #fff;
 }
 
 .unchecked,
@@ -377,7 +382,7 @@ li input {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: #f5f5f5;
+    background-color: #141414;
     padding: 8px 0;
     border-radius: 5px 5px 0 0;
 }
@@ -392,6 +397,7 @@ li input {
     line-height: 1.5;
     box-shadow: none;
     padding: 0 30px;
+    color: #fff;
 }
 
 /* weather */
@@ -399,4 +405,6 @@ li input {
     position: absolute;
     right: 0;
     margin: 20px 20px 0 0;
+    font-size: 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
 }

@@ -9,10 +9,16 @@ function onGeoOk(position) {
     .then((data) => {
       const weather = document.querySelector("#weather span:first-child");
       const city = document.querySelector("#weather span:last-child");
+      const iconCode = data.weather[0].icon;
+      const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
+      const iconImg = document.createElement("img");
+      iconImg.src = iconUrl;
       city.innerText = data.name;
       weather.innerText = data.weather[0].main;
+      weather.appendChild(iconImg);
     });
 }
+
 function onGeoFailure() {
   alert("Can't find you. No weather for you");
 }

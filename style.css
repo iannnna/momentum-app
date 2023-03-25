@@ -12,7 +12,6 @@ body {
     display: none !important;
 }
 
-/* intro + clock + greeting */
 #intro {
     width: 100%;
     position: absolute;
@@ -220,7 +219,6 @@ body {
     padding: 3px;
 }
 
-/* quotes */
 #quotes {
     position: absolute;
     bottom: 2%;
@@ -252,7 +250,6 @@ body {
     display: block;
 }
 
-/* todo */
 #todo {
     position: fixed;
     bottom: 0;
@@ -425,7 +422,6 @@ li input {
     color: #fff;
 }
 
-/* weather */
 #weather {
     position: absolute;
     right: 0;
@@ -439,7 +435,6 @@ li input {
     top: 15px;
 }
 
-/* searchbar */
 #search-bar {
     position: absolute;
     top: 10px;

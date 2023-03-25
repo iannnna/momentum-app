@@ -72,7 +72,6 @@ function paintTodo(newTodo) {
         span.innerText = input.value;
         newTodo.text = input.value;
         saveTodos();
-        input.replaceWith(span);
       }
       if (event.key === "Escape") {
         input.replaceWith(span);
